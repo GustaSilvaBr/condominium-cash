@@ -1,9 +1,11 @@
 import React from 'react';
 
+import {PageContainer} from '../../components/PageContainer/Index';
+
 export function Dashboard(){
     return (
-        <div>
-            Dashboard
-        </div>
+        <PageContainer >
+            <>Dashboard</>
+        </PageContainer>
     )
 }
