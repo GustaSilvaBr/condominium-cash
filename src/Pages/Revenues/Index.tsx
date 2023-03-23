@@ -3,7 +3,9 @@ import React, { useState } from 'react';
 import { PageContainer } from '../../components/PageContainer/Index';
 import { Revenue } from '../../interfaces/Revenue';
 import { StudentsList } from './RevenuesList/Index';
-import {revenues} from '../../data/revenues';
+import { revenues } from '../../data/revenues';
+import { BtnOpenModal } from '../../components/BtnOpenModal/Index';
+import { Modal } from '../../components/Modal/Index';
 
 export function Revenues() {
     const [revenuePicker, setRevenuePicked] = useState<Revenue>();
@@ -14,7 +16,7 @@ export function Revenues() {
             <>
                 <div className="row justify-content-between align-items-center align-content-center">
                     <div className="col-4">
-                        <h1 className='p-0 m-0'>Receitas</h1>
+                        <h1 className='h2 p-0 m-0'>Receitas</h1>
                     </div>
                     <div className="col-6">
                         <div className="input-group input-group-md">
@@ -29,7 +31,21 @@ export function Revenues() {
                     </div>
                 </div>
 
-                <StudentsList setRevenuePicked={setRevenuePicked} revenues={revenues}/>
+                <div className='row mt-5 justify-content-between'>
+                    <div className='col-10'>
+                        <div className="input-group">
+                            <span className="input-group-text" id="basic-addon1">Pesquisar</span>
+                            <input type="text" className="form-control" placeholder="Ex: João Silva" aria-label="Username" aria-describedby="basic-addon1" />
+                        </div>
+                    </div>
+                    <div className="col">
+                        <BtnOpenModal modalId='newRevenue' title='Nova receita' />
+                    </div>
+                </div>
+                <Modal title='Nova Receita' confirmationText='Inserir' modalId='newRevenue'>
+                    <></>
+                </Modal>
+                <StudentsList setRevenuePicked={setRevenuePicked} revenues={revenues} />
             </>
         </PageContainer>
     )

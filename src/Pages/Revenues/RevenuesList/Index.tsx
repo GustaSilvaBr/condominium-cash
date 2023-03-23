@@ -10,8 +10,8 @@ interface IStudentsList {
 
 export function StudentsList({ revenues, setRevenuePicked }: IStudentsList) {
 
-    function getStatusBadge(revenue: Revenue){
-        switch(revenue.status){
+    function getStatusBadge(revenue: Revenue) {
+        switch (revenue.status) {
             case 'Pendente':
                 return 'secondary';
             case 'Atrasado':
@@ -37,7 +37,7 @@ export function StudentsList({ revenues, setRevenuePicked }: IStudentsList) {
                                 </td>
                                 <td className='align-middle'>{revenue.date.toString()}</td>
                                 <td>
-                                    <button className="btn btn-primary btn-sm" onClick={() => { setRevenuePicked(revenue) }}>Pagamento</button>
+                                    <button className="btn btn-primary btn-sm" onClick={() => { setRevenuePicked(revenue) }}>Atualizar</button>
                                 </td>
                             </tr>
                         )

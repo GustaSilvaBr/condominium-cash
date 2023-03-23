@@ -7,7 +7,7 @@ interface BtnOpenModalInterface {
 
 export function BtnOpenModal({ title, modalId }: BtnOpenModalInterface) {
     return (
-        <button type="button" className="btn btn-primary" data-bs-toggle="modal" data-bs-target={`#${modalId}`}>
+        <button type="button" className="btn btn-primary w-100" data-bs-toggle="modal" data-bs-target={`#${modalId}`}>
             {title}
         </button>
     )
