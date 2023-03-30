@@ -35,7 +35,7 @@ export function StudentsList({ revenues, setRevenuePicked }: IStudentsList) {
                                         <span className={`badge bg-${getStatusBadge(revenue)} w-75`}> {revenue.status}</span>
                                     </h5>
                                 </td>
-                                <td className='align-middle'>{revenue.date.toString()}</td>
+                                <td className='align-middle'>{revenue.date.toLocaleDateString('pt-BR')}</td>
                                 <td>
                                     <button className="btn btn-primary btn-sm" onClick={() => { setRevenuePicked(revenue) }}>Atualizar</button>
                                 </td>

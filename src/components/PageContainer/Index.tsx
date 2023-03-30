@@ -9,7 +9,7 @@ export function PageContainer({ children }: IPageContainer) {
     return (
         <div className="page-container">
             <Navbar />
-            <div className='container my-4'>
+            <div className='container-fluid container-lg  my-4'>
                 {children}
             </div>
         </div>

@@ -2,7 +2,7 @@ import {Resident} from './Resident';
 
 export interface Revenue{
     value: number,
-    date: number | '',
+    date: Date,
     resident: Resident,
     status: 'Pago' | 'Pendente' | 'Atrasado',
 }
