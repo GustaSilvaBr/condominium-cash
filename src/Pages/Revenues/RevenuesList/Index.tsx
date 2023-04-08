@@ -1,11 +1,11 @@
 import React from 'react';
 
 import { Table } from '../../../components/Table/Index';
-import { Revenue } from '../../../interfaces/Revenue';
+import { IRevenue } from '../../../interfaces/Revenue';
 
 interface IStudentsList {
-    revenues: Revenue[],
-    setRevenuePicked: (revenue: Revenue) => void
+    revenues: IRevenue[],
+    setRevenuePicked: (revenue: IRevenue) => void
 }
 
 export function StudentsList({ revenues, setRevenuePicked }: IStudentsList) {

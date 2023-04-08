@@ -1,14 +1,14 @@
 import React, { useState } from 'react';
 
 import { PageContainer } from '../../components/PageContainer/Index';
-import { Revenue } from '../../interfaces/Revenue';
+import { IRevenue } from '../../interfaces/Revenue';
 import { StudentsList } from './RevenuesList/Index';
 import { revenues } from '../../data/revenues';
 import { BtnOpenModal } from '../../components/BtnOpenModal/Index';
 import { NewRevenueModal } from './NewRevenueModal/Index';
 
 export function Revenues() {
-    const [revenuePicker, setRevenuePicked] = useState<Revenue>();
+    const [revenuePicker, setRevenuePicked] = useState<IRevenue>();
 
 
 

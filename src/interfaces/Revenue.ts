@@ -1,7 +1,7 @@
-import {Resident} from './Resident';
+import {IResident} from './Resident';
 
-export interface Revenue{
+export interface IRevenue{
     value: number,
     date: Date,
-    resident: Resident,
+    resident: IResident,
 }

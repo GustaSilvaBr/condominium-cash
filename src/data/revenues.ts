@@ -1,6 +1,6 @@
-import { Revenue } from "../interfaces/Revenue";
+import { IRevenue } from "../interfaces/Revenue";
 
-export const revenues: Revenue[] = [{
+export const revenues: IRevenue[] = [{
     value: 30,
     date: new Date(2023,0,23),
     resident: {
