@@ -1,7 +1,7 @@
 import { FormModal } from '../../../components/FormModal/Index';
-import { Revenue } from '../../../interfaces/Revenue';
+import { IRevenue } from '../../../interfaces/Revenue';
 import { DomUtils } from '../../../utils/DomUtils';
-import { RevenueController } from '../../../controller/RevenueController';
+import { RevenueController } from '../../../controllers/RevenueController';
 
 interface INewRevenueModal {
     modalId: string
@@ -22,7 +22,7 @@ export function NewRevenueModal({ modalId }: INewRevenueModal) {
 
         const revenueFromForm: any = DomUtils.getResponseObjectFromForm(form);
 
-        const newRevenue: Revenue = {
+        const newRevenue: IRevenue = {
             date: revenueFromForm["date"],
             resident: revenueFromForm["resident"],
             value: revenueFromForm["value"]
@@ -32,11 +32,11 @@ export function NewRevenueModal({ modalId }: INewRevenueModal) {
         form.reset();
     }
 
-    function handleAddRevenue(revenue: Revenue){
-        revenueController.addRevenue(revenue).then((response)=>{
+    function handleAddRevenue(revenue: IRevenue){
+        revenueController.create(revenue).then((response)=>{
             alert('Receita criada com sucesso');
         }).catch((err)=>{
-            
+            alert('Não foi possível inserir uma nova receita');
             console.error(err);
         })
     }
@@ -47,7 +47,7 @@ export function NewRevenueModal({ modalId }: INewRevenueModal) {
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Morador</label>
                     <select className="form-select" aria-label="Default select example" name="resident">
-                        <option selected value="0">Felipe</option>
+                        <option selected value="0">Selecione</option>
                         <option value="1">Otávio</option>
                         <option value="2">Fernando</option>
                         <option value="3">Augusto</option>

@@ -1,18 +1,21 @@
 import { collection, CollectionReference, DocumentData, addDoc } from 'firebase/firestore';
 import { db } from '../config/firestore';
-import { Revenue } from '../interfaces/Revenue';
+import { IRevenue } from '../interfaces/Revenue';
+import {AbstractRevenue} from '../abstracts/AbstractRevenue';
 
-export class RevenueModel {
+export class RevenueModel extends AbstractRevenue{
     private revenueCollection: CollectionReference<DocumentData>;
+
     constructor() {
+        super();
         this.revenueCollection = collection(db, "revenues");
     }
 
-    async addRevenue(revenue: Revenue): Promise<void> {
+    async create(revenue: IRevenue): Promise<void> {
         const docCreated = await addDoc(this.revenueCollection, revenue);
         
-        if(!docCreated.id){
-            throw 'Não foi possível inserir uma nova receita'
+        if(docCreated.id){
+            throw Error()
         }
     }
 }
