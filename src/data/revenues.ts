@@ -8,7 +8,6 @@ export const revenues: Revenue[] = [{
         side: 'A',
         apt: '221'
     },
-    status: "Pendente"
 },
 {
     value: 30,
@@ -18,7 +17,6 @@ export const revenues: Revenue[] = [{
         side: 'A',
         apt: '222'
     },
-    status: "Pago"
 },
 {
     value: 30,
@@ -28,7 +26,6 @@ export const revenues: Revenue[] = [{
         side: 'A',
         apt: '221'
     },
-    status: "Pendente"
 },
 {
     value: 30,
@@ -38,7 +35,6 @@ export const revenues: Revenue[] = [{
         side: 'A',
         apt: '221'
     },
-    status: "Pendente"
 },
 {
     value: 30,
@@ -48,5 +44,4 @@ export const revenues: Revenue[] = [{
         side: 'A',
         apt: '221'
     },
-    status: "Pendente"
 }]

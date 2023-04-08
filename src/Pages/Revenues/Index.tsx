@@ -5,19 +5,17 @@ import { Revenue } from '../../interfaces/Revenue';
 import { StudentsList } from './RevenuesList/Index';
 import { revenues } from '../../data/revenues';
 import { BtnOpenModal } from '../../components/BtnOpenModal/Index';
-import { FormModal } from '../../components/FormModal/Index';
+import { NewRevenueModal } from './NewRevenueModal/Index';
 
 export function Revenues() {
     const [revenuePicker, setRevenuePicked] = useState<Revenue>();
 
-    function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
-        e.preventDefault();
-        alert('inserted');
-    }
+
 
     return (
         <PageContainer >
-            <>
+            <div className='revenues-page'>
+
                 <div className="row justify-content-between align-items-center align-content-center">
                     <div className="col-4">
                         <h1 className='h2 p-0 m-0'>Receitas</h1>
@@ -46,33 +44,12 @@ export function Revenues() {
                         <BtnOpenModal modalId='newRevenue' title='Nova receita' />
                     </div>
                 </div>
-                <FormModal title='Nova Receita' confirmationText='Inserir' modalId='newRevenue' handleSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputEmail1" className="form-label">Morador</label>
-                        <select className="form-select" aria-label="Default select example">
-                            <option selected>Felipe</option>
-                            <option value="1">Otávio</option>
-                            <option value="2">Fernando</option>
-                            <option value="3">Augusto</option>
-                        </select>
-                    </div>
 
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Data de pagamento</label>
-                        <input type="date" className="form-control" id="exampleInputPassword1" />
-                    </div>
-
-                    <div className="mb-3">
-                        <label htmlFor="exampleInputPassword1" className="form-label">Valor</label>
-                        <div className="input-group mb-3">
-                            <span className="input-group-text" id="basic-addon1">R$</span>
-                            <input type="text" className="form-control" placeholder="Ex: 30,00" aria-label="Username" aria-describedby="basic-addon1" />
-                        </div>
-
-                    </div>
-                </FormModal>
+                <NewRevenueModal modalId='newRevenue'/>
+               
                 <StudentsList setRevenuePicked={setRevenuePicked} revenues={revenues} />
-            </>
+            </div>
+
         </PageContainer>
     )
 }
